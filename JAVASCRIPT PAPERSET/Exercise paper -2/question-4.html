@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do list</title>
+</head>
+
+<body>
+
+    <center>
+        <table border="1"cellspacing="5" cellpadding="5">
+            <thead>
+                <input type="hidden" id="id">
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" id="name"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="text" id="email"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" id="password"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button onclick="save()">Submit</button></td>
+                </tr>
+            </thead>
+        </table>
+        <br>
+        <hr>
+        <br>
+        <table border="1" cellspacing="10" cellpadding="15">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Action</th>
+            </tr>
+            <tbody id="table">
+
+            </tbody>
+        </table>
+    </center>
+
+    <script type="text/javascript">
+        let data = [];
+        const view = () =>{
+            let all = JSON.parse(localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user')) : [];
+            let tbl="";
+            all.map((val)=>{
+                tbl+=`
+                        <tr>
+                            <td>${val.name}</td>    
+                            <td>${val.email}</td>    
+                            <td>${val.password}</td>    
+                            <td>
+                            <button onclick="deletedata(${val.userid})">Delete</button>    
+                            <button onclick="editdata(${val.userid})">Edit</button>    
+                            </td>
+                        </tr>
+                    `
+            })
+            document.getElementById('table').innerHTML = tbl;
+
+        }
+        view()
+        const save = () => {
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+            let userid = Math.floor(Math.random() * 10000);
+            let editid = document.getElementById('id').value;
+            let obj = { userid, name, email, password }
+
+            if(!name || !email || !password){
+                alert("information is required.......!")
+            }else{
+           
+         if(editid){
+            let all = JSON.parse(localStorage.getItem('user'));
+            let ans = all.map((val)=>{
+                if(val.userid == editid){
+                    (val.name = obj.name) ,(val.email = obj.email) ,(val.password = obj.password)
+                }
+                return val
+            })
+            localStorage.setItem('user',JSON.stringify(ans));
+            alert("data succesfully edited")
+            document.getElementById('id').value = "";
+            view();
+         }else{
+            if (localStorage.getItem('user') == null || localStorage.getItem('user') == undefined) {
+                data.push(obj)
+                localStorage.setItem('user', JSON.stringify(data))
+            } else {
+                let all = JSON.parse(localStorage.getItem('user'));
+                all.push(obj)
+                localStorage.setItem('user', JSON.stringify(all))
+            }
+
+         }
+         alert("data succesfully submited")
+            document.getElementById('name').value = "";
+            document.getElementById('email').value = "";
+            document.getElementById('password').value = "";
+
+            view();
+        }
+    }
+        const deletedata =(id) =>{
+            let all = JSON.parse(localStorage.getItem('user'));
+            let ans = all.filter((val)=>{
+                return val.userid != id
+            })
+            localStorage.setItem('user',JSON.stringify(ans));
+            alert("data succesfully deleted")
+            view();
+        }
+        const editdata = (id) =>{
+            let all = JSON.parse(localStorage.getItem('user'));
+            let ans = all.find((val)=>{
+                return val.userid == id
+            })
+            document.getElementById('name').value = ans.name
+            document.getElementById('email').value = ans.email
+            document.getElementById('password').value = ans.password
+            document.getElementById('id').value = ans.userid
+           
+        }
+    </script>
+</body>
+
+</html>

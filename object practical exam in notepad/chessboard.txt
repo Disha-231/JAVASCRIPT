@@ -1,0 +1,68 @@
+<html>
+<head>
+     
+     <title>chessbord</title>
+</head>
+<body>
+     <table id="root" border="1"></table>
+
+     <script type="text/javascript">
+
+          var root = document.getElementById('root');
+
+          for (var i = 1; i <= 8; i++) {
+
+               var tr = document.createElement('tr');
+               root.appendchild(tr);
+
+               if (i % 2 == 0) {
+
+                    for (var j = 1; j <= 8; j++) {
+
+                         var td = document.createElement('td');
+                         tr.appendchild(td);
+
+
+                         if (j % 2 == 1) {
+
+                              td.style.backgroundcolor = "white";
+
+                         } else {
+
+                              td.style.backgroundcolor = "black";
+
+                         }
+
+                    }
+                    td.width = "70px";
+                    td.height = "70px";
+
+               } else {
+
+                    for (var j = 1; j <= 8; j++) {
+
+                         var td = document.createElement('td');
+                         tr.appendchild(td);
+
+
+                         if (j % 2 == 1) {
+
+                              td.style.backgroundcolor = "black";
+
+                         } else {
+
+                              td.style.backgroundcolor = "white";
+
+                         }
+
+                    }
+                   td. width = "70px";
+                   td.height = "70px";
+
+               }
+          }
+
+
+     </script>
+</body>
+</html>

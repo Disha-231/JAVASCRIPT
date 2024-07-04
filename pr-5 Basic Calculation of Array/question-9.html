@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search array elemet using for loop.</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+
+        var number = parseInt(prompt("Enter Array Size : -- "));
+        var flag = 0;
+        var array = [number];
+
+        for (i = 0; i < number; i++) 
+        {
+            array[i] = parseInt(prompt("Enter elements of array: -- "));
+        }
+
+        var element = parseInt(prompt("Enter your element you can search:-"));
+
+        for (i = 0; i < number; i++) 
+        {
+            if (array[i] == element) 
+            {
+                flag = 1;
+            }
+        }
+
+        if (flag == 1) document.write(`<h2>This element is found:- ${element}</h2>`);
+        
+        else document.write(`<h2>This element is not found:- ${element}</h2>`);
+        
+    
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+

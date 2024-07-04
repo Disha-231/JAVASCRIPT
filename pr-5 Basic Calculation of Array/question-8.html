@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>all element sum.</title>
+
+</head>
+
+<body>
+            
+    <script type="text/javascript">
+
+            var number = parseInt(prompt("Enter Array Size :- "));
+            var sum= 0;
+
+            var array = [number];
+
+            for(i = 0 ; i < number ; i++)
+            {
+                 array[i] = parseInt(prompt("Enter Array Element :- "));
+            }
+            for(i = 0 ; i < number ; i++)
+            {
+                 sum = sum + array[i];
+            }
+            
+             document.write(array);
+             document.write(`<br>`);
+             document.write(`The addition is :- ${sum}`);
+
+    </script>
+
+
+</body>
+
+</html>

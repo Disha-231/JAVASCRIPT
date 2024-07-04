@@ -1,0 +1,75 @@
+<!-- 10. Write a JavaScript program to create basic calculator using switch case.
+Ex. User input a,b and select choice + , - , * , / 
+a=10
+b=5
+select choice + , - , * , /
++
+Ans = 15
+-
+Ans = 5;
+*
+Ans = 50
+/
+Ans = 2 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculation</title>
+</head>
+
+<body>
+   <script type="text/javascript">
+    
+     var result;
+    
+
+    var operator = prompt('Enter Your Choice :=  +, -, * , %,  / :== ');
+    
+
+    const number1 = parseFloat(prompt('Enter first number: '));
+    const number2 = parseFloat(prompt('Enter second number: '));
+    
+    switch(operator) {
+        case '+':
+             result = number1 + number2;
+            console.log(`${number1} + ${number2} = ${result}`);
+            document.write(` <h1> ${number1} + ${number2} = ${result}</h1>`);
+            break;
+    
+        case '-':
+             result = number1 - number2;
+            console.log(`${number1} - ${number2} = ${result}`);
+            document.write(` <h1> ${number1} - ${number2} = ${result}</h1>`);
+            break;
+    
+        case '*':
+             result = number1 * number2;
+            console.log(`${number1} * ${number2} = ${result}`);
+            document.write(` <h1> ${number1} * ${number2} = ${result}</h1>`);
+            break;
+    
+        case '/':
+             result = number1 / number2;
+            console.log(`${number1} / ${number2} = ${result}`);
+            document.write(` <h1> ${number1} / ${number2} = ${result}</h1>`);
+            break;
+
+            case '%':
+             result = number1 / number2;
+            console.log(`${number1} % ${number2} = ${result}`);
+            document.write(` <h1> ${number1} % ${number2} = ${result}</h1>`);
+            break;
+    
+        default:
+            console.log('Invalid Choice..');
+            break;
+    }
+
+   </script>
+</body>
+
+</html>

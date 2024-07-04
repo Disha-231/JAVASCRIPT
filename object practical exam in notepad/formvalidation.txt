@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>Form validation</title>
+<body>
+<h1>--:Form Validation:---</h1>
+
+<form>
+	<table border="1">
+
+		<tr>
+			<td>Name:-</td>
+			<td><input type = "text" id="username">
+			<span id ="namerr"></td>
+		</tr>
+
+		<tr>
+			<td>Email:-</td>
+			<td><input type = "text" id="useremail">
+			<span id ="emailerr"></td>
+		</tr>
+
+		<tr>
+			<td>Password:-</td>
+			<td><input type = "text" id="userpass">
+			<span id ="passerr"></td>
+		</tr>
+
+		<tr>
+			<td>City:-</td>
+			<td><input type = "text" id="usercity">
+			<span id ="cityerr"></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td><input type = "button" onclick = "save()" value="submit">
+			</td>
+		</tr>
+	</table>
+</form>
+
+<script type = "text/javascript">
+	function save(){
+		
+	let name = document.getElementById('username').value;
+	let email = document.getElementById('useremail').value;
+	let password = document.getElementById('userpass').value;
+	let city = document.getElementById('usercity').value;
+
+	if(!name){
+	var n = document.getElementById('namerr');
+	n.innerHTML = "Name is required"
+	n.style.color = "red"
+		}
+
+	if(!email){
+	var e = document.getElementById('emailerr');
+	e.innerHTML = "Email is required"
+	e.style.color = "red"
+		}
+
+	if(!password){
+	var p = document.getElementById('passerr');
+	p.innerHTML = "password is required"
+	p.style.color = "red"
+		}
+
+	if(!city){
+	var c = document.getElementById('cityerr');
+	c.innerHTML = "city is required"
+	c.style.color = "red"
+		}
+
+		
+
+			}
+
+</script>
+</body>
+</html>

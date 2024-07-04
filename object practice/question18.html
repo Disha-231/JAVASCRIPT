@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function is_dom_element(node) {
+    return node instanceof HTMLElement || node instanceof SVGElement || node && node.nodeType === 1;
+}
+
+// Example usage:
+var div = document.createElement('div');
+console.log(is_dom_element(div)); // true
+console.log(is_dom_element(document.body)); // true
+console.log(is_dom_element(null)); // false
+console.log(is_dom_element(undefined)); // false
+console.log(is_dom_element(123)); // false
+console.log(is_dom_element('hello')); // false
+    </script>
+</body>
+</html>

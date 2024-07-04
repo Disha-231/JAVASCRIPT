@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inheritance</title>
+</head>
+<body>
+    <!-- multiple inheritance -->
+    <script type="text/javascript">
+        class parent
+        {
+            par(){
+                console.log(`perent class`);
+            }
+        }
+
+        class child extends parent{
+            ch(){
+                console.log(`child class`);
+            }
+        }
+
+        class superchild extends child{
+            sch(){
+                console.log(`superchild class`);
+            }
+        }
+        let obj = new superchild;
+        obj.par();
+        obj.ch();
+        obj.sch();
+    </script>
+</body>
+</html>
+
+<!-- single inheritance -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inheritance</title>
+</head>
+<body>
+    <script type="text/javascript">
+        class parent
+        {
+            par(){
+                console.log(`perent class`);
+            }
+        }
+
+        class child extends parent{
+            ch(){
+                console.log(`child class`);
+            }
+        }
+        let obj = new child;
+       
+        obj.par();
+        obj.ch();
+    </script>
+</body>
+</html> -->
+
+

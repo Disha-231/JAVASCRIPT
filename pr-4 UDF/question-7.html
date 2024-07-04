@@ -1,0 +1,133 @@
+<!-- 
+7.Write a JavaScript program to find which number is greter in 3 numbers using nested if else.(using all function)
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-7</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // TAKE NOTHING RETURN SOMETHING :-------------------------------------------------------------------------
+        //     function Max() {
+
+        //        var Number1 =parseInt(prompt("Enter the first number:"));
+        //        var Number2 =parseInt(prompt("Enter the second number:"));
+        //        var Number3 =parseInt(prompt("Enter the third number:"));
+
+
+        //         if (Number1 >= Number2) {
+        //             if (Number1 >= Number3) {
+        //                 document.write(`<h1>${Number1} is maximum...</h1>`)
+        //             } else {
+        //                 document.write(`<h1>${Number3} is maximum...</h1>`)
+        //             }
+        //         } else {
+        //             if (Number2 >= Number3) {
+        //                 document.write(`<h1>${Number2} is maximum...</h1>`)
+        //             } else {
+        //                 document.write(`<h1>${Number3} is maximum...</h1>`)
+        //             }
+        //         }
+        //     }
+
+
+        //    var greatestNumber = Max();
+
+
+
+
+        // TAKE NOTHING RETURN NOTHING:-------------------------------------------------------------------------
+
+
+        // function Maximum() {
+
+        //     var Number1 = parseInt(prompt("Enter the first number:"));
+        //     var Number2 = parseInt(prompt("Enter the second number:"));
+        //     var Number3 = parseInt(prompt("Enter the third number:"));
+
+
+
+        //     if (Number1 >= Number2) {
+        //         if (Number1 >= Number3) {
+        //             document.write("The greatest number is: " + Number1);
+        //         } else {
+        //             document.write("The greatest number is: " + Number3);
+        //         }
+        //     } else {
+        //         if (Number2 >= Number3) {
+        //             document.write("The greatest number is: " + Number2);
+        //         } else {
+        //             document.write("The greatest number is: " + Number3);
+        //         }
+        //     }
+        // }
+
+
+        // Maximum();
+
+        // TAKE SOMETHING RETURN SOMETHING :-----------------------------------------------------------
+        // function MAX() {
+
+        //     var Number01 = parseInt(prompt("Enter the first number:"));
+        //     var Number02 = parseInt(prompt("Enter the second number:"));
+        //     var Number03 = parseInt(prompt("Enter the third number:"));
+
+
+        //     if (Number01 >= Number02) {
+        //         if (Number01 >= Number03) {
+        //             return Number01;
+        //         } else {
+        //             return Number03;
+        //         }
+        //     } else {
+        //         if (Number02 >= Number03) {
+        //             return Number02;
+        //         } else {
+        //             return Number03;
+        //         }
+        //     }
+        // }
+
+
+        // var result = MAX();
+        // document.write("The greatest number is: " + result);
+
+
+        
+
+        //TAKE SOMETHING RETURNH NOTHING :-----------------------------------------------------------------
+
+
+
+        function findGreaterNumber(num1, num2, num3) {
+            if (num1 > num2) {
+                if (num1 > num3) {
+                    document.write(`<h1>${num1}  is the greatest number</h1>`);
+                } else {
+                    document.write(`<h1>${num3}  is the greatest number</h1>`);
+                }
+            } else {
+                if (num2 > num3) {
+                    document.write(`<h1>${num2}  is the greatest number</h1>`);
+                } else {
+                    document.write(`<h1>${num3}  is the greatest number</h1>`);
+                }
+            }
+        }
+
+     var Number01 = parseInt(prompt("Enter Any Number:- "));
+     var Number02 = parseInt(prompt("Enter Any Number:- "));
+     var Number03 = parseInt(prompt("Enter Any Number:- "));
+
+        findGreaterNumber(Number01, Number02, Number03);
+
+
+    </script>
+</body>
+
+</html>

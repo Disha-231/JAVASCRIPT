@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function parseUrl(url) {
+            const parser = document.createElement('a');
+            parser.href = url;
+            return {
+                protocol: parser.protocol,
+                host: parser.host,
+                hostname: parser.hostname,
+                port: parser.port,
+                pathname: parser.pathname,
+                search: parser.search,
+                hash: parser.hash,
+            };
+        }
+
+        const parsedUrl = parseUrl('https://www.example.com:8080/path/to/page?query=string#fragment');
+        console.log(parsedUrl);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation...</title>
+</head>
+<body>
+        <h1 align="center" style="color: rgb(25, 84, 108);">Form Validation</h1>
+        <form>
+            <table align="center" border="1" cellpadding="2" cellspacing="2">
+                <tr>
+                    <td>Name:- </td>
+                    <td><input type="text" id="name">
+                        <span id="namerr"></span></td>
+                </tr>
+                <tr>
+                    <td>E-mail:- </td>
+                    <td><input type="text" id="useremail"> 
+                        <span id="emailerr"></span></td>
+                </tr>
+                <tr>
+                    <td>Password:- </td>
+                    <td><input type="text" id="userpassword"> 
+                        <span id="passerr"></span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="button" onclick="save()" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    <script type="text/javascript">
+        function save(){
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('useremail').value;
+            let password = document.getElementById('userpassword').value;
+            if (!name) {
+            var n = document.getElementById('namerr');
+            n.innerHTML = "Name is required";
+            n.style.color = "red";
+        }if (!email) {
+            var e = document.getElementById('emailerr');
+            e.innerHTML = "Email is required";
+            e.style.color = "red"
+        }else {
+            if (password.length < 8) {
+                document.getElementById('passerr').innerHTML = "Password must be at least 6 characters"
+            }else if(password.search(/[a-z]/) < 0){
+                document.getElementById('passerr').innerHTML = "Password must be at least a to z Character"
+            }else if(password.search(/[A-Z]/) < 0){
+                document.getElementById('passerr').innerHTML = "Password must be at least A to Z Character"
+            }else if(password.search(/[0-9]/) < 0){
+                document.getElementById('passerr').innerHTML = "Password must be at least 0 to 9 Number.."
+            }
+        }
+        }
+    </script>
+</body>
+</html>

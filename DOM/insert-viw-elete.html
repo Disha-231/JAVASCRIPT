@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert-view-delete</title>
+</head>
+
+<body>
+    <table align="center" border="1" cellpadding="2" cellspacing="2">
+        <tr>
+            <td>Name:- </td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td>Phone:- </td>
+            <td><input type="number" id="Phone"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="button" onclick="save()" value="Submit"></td>
+        </tr>
+
+    </table>
+    <br>
+    <hr>
+    <hr>
+    <br><br>
+    <table align="center" border="1" cellpadding="10" cellspacing="5">
+        <thead>
+            <tr>
+                <td>Number </td>
+                <td>Name</td>
+                <td>phone</td>
+                <td>Action</td>
+
+            </tr>
+        </thead>
+        <tbody id="record"></tbody>
+    </table>
+
+    <script type="text/javascript">
+
+        //viewrecord:----------------------
+        let record = [];
+        const viewrecord = () => {
+            var tbl = "";
+            record.map((val) => {
+                return (
+                    tbl += `
+                <tr>
+                    <td>${val.id}</td>
+                    <td>${val.name}</td>
+                    <td>${val.phone}</td>
+                    <td>
+                        <button onclick="deleteviewrecord(${val.id})"> delete</button>
+                        </td>
+                 </tr>
+                 `
+
+                )
+            })
+            document.getElementById(`record`).innerHTML = tbl;
+        }
+        viewrecord();
+        //saverecord:----------------------------------
+        const saverecord = () => {
+            let username = document.getElementById('name').value;
+            let userphone = document.getElementById('phone').value;
+            let id = Math.floor(Math.rendom() * 100000) ;
+            let obj = {
+                id : id,
+                name : username,
+                phone : userphone
+            }
+            record.push(obj);
+            alert("Record save successfully");
+            viewrecord();
+            document.getElementById('name').value ="";
+            document.getElementById('phone').value="";
+        }
+        
+
+        //deleterecord:-------------------------------
+        const deleterecord = (id) =>{
+            var deleter = record.filter((val) =>{
+                return val.id != id;
+            })
+            record = deleter;
+            alert("Delete successfully");
+            viewrecord();
+        
+        }
+
+
+    </script>
+
+</body>
+
+</html>

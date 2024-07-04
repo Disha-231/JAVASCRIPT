@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function printMethods(obj) {
+            const methods = Object.getOwnPropertyNames(obj)
+                .filter(name => typeof obj[name] === 'function')
+                .map(name => name.toString()
+                    .match(/[\w\s]+(?=\()/g)
+                    .join('')
+                );
+            return methods;
+        }
+
+        console.log(printMethods(Array));
+    </script>
+</body>
+
+</html>

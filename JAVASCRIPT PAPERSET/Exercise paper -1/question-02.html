@@ -1,0 +1,48 @@
+<!-- !
+2. Write a JavaScript program that iterates integers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for multiples of five print "Buzz". For numbers multiples of both three and five print "FizzBuzz". (10 marks)
+exmple :- 
+1 
+2 
+3 Fizz 
+4 
+5 Buzz 
+6 Fizz 
+7 
+8 
+9 Fizz 
+10 Buzz -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 And 5 divisible</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        for (let i = 1; i <= 100; i++) {
+
+            if (i % 3 === 0 && i % 5 === 0) {
+                console.log("FizzBuzz");
+               document.write("<h1>FizzBuzz</h1>");
+
+            } else if (i % 3 === 0) {
+                console.log("Fizz");
+                document.write("<h1>Fizz</h1>");
+
+            } else if (i % 5 === 0) {
+                console.log("Buzz");
+                document.write("<h1>Buzz</h1>");
+
+                
+            } else {
+                document.write(`<h1>${i}</h1>`);
+            }
+        }
+    </script>
+</body>
+
+</html>

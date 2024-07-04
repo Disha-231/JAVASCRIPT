@@ -1,0 +1,39 @@
+<!-- 4.Write a JavaScript program to find which number is greter in 4 numbers using ledder if else -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximum Number</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        var num1 = parseFloat(prompt("Enter first number: "));
+        var num2 = parseFloat(prompt("Enter second number: "));
+        var num3 = parseFloat(prompt("Enter third number: "));
+        var num4 = parseFloat(prompt("Enter forth number: "));
+        var largest;
+
+
+        if (num1 >= num2 && num1 >= num3 && num1 >= num4) {
+            largest = num1;
+        }
+        else if (num2 >= num1 && num2 >= num3 && num2 >= num4) {
+            largest = num2;
+        }
+        else if (num3 >= num1 && num3 >= num2 && num3 >= num4) {
+            largest = num2;
+        }
+        else {
+            largest = num4;
+        }
+
+        console.log("The largest number is " + largest);
+        document.write(`<h1>The largest number is ${largest}</h1>`)
+    </script>
+</body>
+
+</html>

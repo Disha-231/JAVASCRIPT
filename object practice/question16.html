@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function invert_key_value(obj) {
+    var result = {};
+    var keys = Object.keys(obj);
+    for (var i = 0, length = keys.length; i < length; i++) {
+        result[obj[keys[i]]] = keys[i];
+    }
+    return result;
+}
+
+console.log(invert_key_value({red: "#FF0000", green: "#00FF00", white: "#FFFFFF"}));
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function getSubstrings(str) {
+  let result = [];
+  for (let i = 0; i < str.length; i++) {
+    for (let j = i; j < str.length; j++) {
+      result.push(str.substring(i, j + 1));
+    }
+  }
+  return result;
+}
+
+const str = "dog";
+console.log(getSubstrings(str)); // ["d", "do", "dog", "o", "og", "g"]
+    </script>
+</body>
+</html>

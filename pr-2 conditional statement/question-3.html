@@ -1,0 +1,27 @@
+<!-- 3.Write a JavaScript program to check year is leap year or not leap year.? -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leap Year..</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        var year;
+        var year = prompt('Enter a year:');
+
+            if ((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) {
+                console.log(year + ' is a leap year');
+                document.write("<h1>This is A Leap Year</h1>")
+            } else {
+                console.log(year + ' is not a leap year');
+                document.write("<h1>This is A Not Leap Year</h1>")
+            }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-8</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        function calculations(Number1, Number2, operator) {
+            switch (operator) {
+                case '+':
+                    return Number1 + Number2;
+                case '-':
+                    return Number1 - Number2;
+                case '*':
+                    return Number1 * Number2;
+                case '/':
+
+                    return Number1 / Number2;
+                default:
+                    return 'Invalid Choice';
+            }
+        }
+
+        var num1 = parseFloat(prompt('Enter the first number:- '));
+        var num2 = parseFloat(prompt('Enter the second number:- '));
+        var sign = prompt('Choose an sign (+, -, *, /):- ');
+
+
+        var result = calculations(num1, num2, sign);
+        document.write(`Result: ${result}`);
+
+    </script>
+</body>
+
+</html>

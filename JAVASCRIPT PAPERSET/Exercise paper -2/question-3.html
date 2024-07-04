@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        var number = parseInt(prompt("Enter Array Size : -- "));
+        var array = [number];
+        flag = 0;
+
+        for (i = 0; i < number; i++) {
+            array[i] = parseInt(prompt("Enter Array Element : -- "));
+        }
+
+        for (i = 0; i < number; i++) {
+            for (j = i + 1; j < number; j++) {
+                if (array[i] > array[j]) {
+                    flag = array[i];
+                    array[i] = array[j];
+                    array[j] = flag;
+                }
+            }
+        }
+        document.write(`<h2>the elements in ascending order is:-${array}</h2>`);
+    </script>
+</body>
+
+</html>

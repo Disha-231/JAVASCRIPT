@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basic calculation</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        var ValueA = parseInt(prompt("Enter Value Of A :- "));
+        var ValueB = parseInt(prompt("Enter Value Of B :- "));
+        var choise = prompt("Enter  +    ,   -   ,   *    ,   /");
+
+        if (choise == '+') {
+            document.write(`<h1>Sum Is =  ${ValueA + ValueB}</h1>`)
+
+        } else if (choise == '-') {
+            document.write(`<h1>Subtraction Is =  ${ValueA - ValueB}</h1>`)
+
+        } else if (choise == '*') {
+            document.write(`<h1>Multiplication Is =  ${ValueA * ValueB}</h1>`)
+
+        } else if (choise == '/') {
+            document.write(`<h1>Division Is =  ${ValueA / ValueB}</h1>`)
+
+        } else {
+            document.write(`<h1>Invalid sign</h1>`)
+
+        }
+    </script>
+</body>
+</html>

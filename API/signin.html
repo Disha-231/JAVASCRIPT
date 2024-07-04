@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+</head>
+<body>
+    <center>
+        <h1>Login User</h1>
+        <table border="1">
+            Email : <input type="text" id="email">
+            Password : <input type="text" id="password">
+            <br><br>
+            <button onclick="loginUser()">Submit</button>
+        </table>
+        <a href="register.html">Sign Up</a>
+    </center>
+
+
+<script type="text/javascript">
+
+    const loginUser = () => {
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+
+        let alluser = JSON.parse(localStorage.getItem('users'))? JSON.parse(localStorage.getItem('users')) : []
+
+        let User = alluser.find((item)=>{
+            return item.email == email && item.password == password
+        })
+        if(User){
+            localStorage.setItem('login', JSON.stringify(user));
+            window.localStorage.href = "dashboard.html";
+        }else{
+            alert("Email and password not valid")
+    }
+    }
+
+</script>
+</body>
+</html>

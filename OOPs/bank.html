@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bank</title>
+</head>
+<body>
+    <script type="text/javascript">
+        class bank{
+            constructor(accno,pass,name,balance){
+                this.accno = accno;
+                this.pass = pass;
+                this.name = name;
+                this.balance = balance;
+            }
+            withdraw(amt){
+                let id = parseInt(prompt("Enter Your Accno:- "));
+                let pass = prompt("Enter Your Password");
+                if(this.accno == id && this.pass == pass){
+                    if(this.balance > amt){
+                        this.balance = this.balance - amt
+                        console.log(`Acc Name:- ${this.name}`);
+                        console.log(`Your Balance:- ${this.balance}`);
+                        console.log(`Thank youu....!`);
+
+                    }else{
+                        console.log(`insufficiant balance`);
+                    }
+                }else{
+                    console.log(`Invalid Acc number and password`);
+                }
+
+            }
+            deposite(amt){
+                let id = parseInt(prompt("Enter Your Accno:- "));
+                let pass = prompt("Enter Your Password");
+                if(this.balance > amt){
+                        this.balance = this.balance + amt
+                        console.log(`Acc Name:- ${this.name}`);
+                        console.log(`Your Balance:- ${this.balance}`);
+                        console.log(`Thank youu....!`);
+
+                    }else{
+                        console.log(`insufficiant balance`);
+                    }
+            }
+        }
+        let obj1 = new bank(12345,"k123","disha",10000);
+        console.log(obj1);
+        obj1.withdraw(1000);
+        obj1.deposite(2000);
+    </script>
+</body>
+</html>

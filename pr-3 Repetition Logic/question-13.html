@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var Num1 = 0, Num2 = 1, NextTerm;
+        var num = parseInt(prompt(`Enter any number :-`));
+
+        document.write(`${Num1} ${Num2} `);
+        for (var i = 0; i < num - 2; i++) {
+            NextTerm = Num1 + Num2;
+            Num1 = Num2;
+            Num2 = NextTerm;
+            document.write(`${NextTerm} `);
+        }
+    </script>
+</body>
+
+</html>

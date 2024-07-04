@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let arr = [
+            [1, 2, 3, 4, 5],
+            [6, 7, 8, 9, 10],
+            [11, 12, 13, 14, 15],
+            [16, 17, 18, 19, 20]
+        ];
+
+ 
+        let boundaryElements = arr.map(innerArray => [innerArray[0], innerArray[innerArray.length - 1]]);
+
+ 
+        boundaryElements = [].concat.apply([], boundaryElements);
+
+        boundaryElements.push(arr[0][arr[0].length - 1], arr[arr.length - 1][arr[arr.length - 1].length - 1]);
+
+        boundaryElements.sort((a, b) => a - b);
+
+        console.log(boundaryElements);  // Output: [1, 2, 3, 4, 5, 10, 15, 20, 19, 18, 17, 16, 11, 6]
+    </script>
+</body>
+
+</html>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

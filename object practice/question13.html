@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function getAllPropertyNames(obj) {
+  const allProperties = [];
+  let currentObject = obj;
+
+  while (currentObject !== null) {
+    const properties = Object.getOwnPropertyNames(currentObject);
+    allProperties.push(...properties);
+    currentObject = Object.getPrototypeOf(currentObject);
+  }
+
+  return allProperties;
+}
+
+const obj = {
+  a: 1,
+  b: 2,
+  c: 3,
+};
+
+const prototype = Object.getPrototypeOf(obj);
+Object.defineProperty(prototype, 'd', { value: 4 });
+
+console.log(getAllPropertyNames(obj));
+// Output: [ 'a', 'b', 'c', 'd' ]
+    </script>
+</body>
+</html>

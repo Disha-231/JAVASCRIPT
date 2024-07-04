@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing : border-box;
+    
+}
+header{
+    background-color: #5e481b;
+    color: white;
+}
+header .icon a i{
+    color: white;
+}
+
+.card{
+   margin: 20px 0;
+   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.card .card-body a{
+    margin-top: 10px;
+    background-color: #ad7608;
+    color: white;
+    border: 0;
+    
+}
+.card .card-body:hover a{
+    background-color: #c9691b;
+    transition:all 1s;
+}
+.card{
+	overflow:hidden;
+	position:relative;
+}
+.card img{
+	object-fit:cover;
+	transition:all 1s;
+}
+.card-title a{
+	color:white;
+	font-size: 16px;
+}
+.card:hover img{
+	transform:scale(1.1);
+}
+.table{
+    border: 1px solid black;
+}
+.Delete{
+ border: 1px solid black;    
+}

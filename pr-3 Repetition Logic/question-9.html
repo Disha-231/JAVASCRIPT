@@ -1,0 +1,30 @@
+<!-- 9.Write javascript program to print multiplication table of any number using for loop. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        var number = parseInt(prompt('Enter an integer: '));
+        var i;
+
+        for (i = 1; i <= 10; i++) {
+
+
+            var result = i * number;
+
+
+            console.log(`${number} * ${i} = ${result}`);
+            document.write(`<h1>${number} * ${i} = ${result}</h1> `)
+        }
+
+    </script>
+</body>
+
+</html>

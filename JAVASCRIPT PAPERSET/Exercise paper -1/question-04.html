@@ -1,0 +1,239 @@
+<!-- 4. create object and filter task. (20 marks)
+let record = [
+        {
+            id : 1,
+            name : "ashish",
+            email : "ashu@gmail.com",
+            phone : "1121212",
+            city : "surat",
+            salary : 20000,
+            degi : "senior",
+            dep : "programming",
+        },
+        {
+            id : 2,
+            name : "hari",
+            email : "hari@gmail.com",
+            phone : "5454545",
+            city : "surat",
+            salary : 22000,
+            degi : "junior",
+            dep : "ui/ux",
+        },
+        {
+            id : 3,
+            name : "raj",
+            email : "raj@gmail.com",
+            phone : "454545",
+            city : "vadodara",
+            salary : 25000,
+            degi : "junior",
+            dep : "bde",
+        },
+        {
+            id : 4,
+            name : "deep",
+            email : "deep@gmail.com",
+            phone : "565656",
+            city : "vapi",
+            salary : 30000,
+            degi : "tl",
+            dep : "webdesign",
+        },
+        {
+            id : 5,
+            name : "jay",
+            email : "jay@gmail.com",
+            phone : "5565656",
+            city : "rajkot",
+            salary : 20000,
+            degi : "senior",
+            dep : "programming",
+        },
+        {
+            id : 6,
+            name : "ajay",
+            email : "ajay@gmail.com",
+            phone : "5565656",
+            city : "vapi",
+            salary : 25000,
+            degi : "manager",
+            dep : "ui/ux",
+        }
+   ]
+
+ 4.1 :- city wise filter record
+ 4.2 :- salary wise filter record (20000 to 35000 beetween record filter)
+ 4.3 :- dep wise filter record
+ 4.4 :- salary 20k to 35000 and city is surat filter record
+ 4.5 :- degi senior wise sum salary
+
+note :- record show in bootstrap table
+
+
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+  
+<center>
+    
+    <table class="table" border="1" cellspacing="12"  cellpadding="12">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>City</th>
+                <th>Salary</th>
+                <th>Designation</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody id="city-records"> </tbody>
+    </table>
+</center>
+    <script type="text/javascript">
+
+        let record = [
+            {
+                id: 1,
+                name: "ashish",
+                email: "ashu@gmail.com",
+                phone: "1121212",
+                city: "surat",
+                salary: 20000,
+                degi: "senior",
+                dep: "programming",
+            },
+            {
+                id: 2,
+                name: "hari",
+                email: "hari@gmail.com",
+                phone: "5454545",
+                city: "surat",
+                salary: 22000,
+                degi: "junior",
+                dep: "ui/ux",
+            },
+            {
+                id: 3,
+                name: "raj",
+                email: "raj@gmail.com",
+                phone: "454545",
+                city: "vadodara",
+                salary: 25000,
+                degi: "junior",
+                dep: "bde",
+            },
+            {
+                id: 4,
+                name: "deep",
+                email: "deep@gmail.com",
+                phone: "565656",
+                city: "vapi",
+                salary: 30000,
+                degi: "tl",
+                dep: "webdesign",
+            },
+            {
+                id: 5,
+                name: "jay",
+                email: "jay@gmail.com",
+                phone: "5565656",
+                city: "rajkot",
+                salary: 20000,
+                degi: "senior",
+                dep: "programming",
+            },
+            {
+                id: 6,
+                name: "ajay",
+                email: "ajay@gmail.com",
+                phone: "5565656",
+                city: "vapi",
+                salary: 25000,
+                degi: "manager",
+                dep: "ui/ux",
+            }
+        ]
+
+        // 4.1 :- city wise filter record
+        function cityFilter(city) {
+            return record.filter(item => item.city === city);
+        }
+
+        // 4.2 :- salary wise filter record (20000 to 35000 beetween record filter)
+        function salaryFilter(min, max) {
+            return record.filter(item => item.salary >= min && item.salary <= max);
+        }
+
+        // 4.3 :- dep wise filter record
+        function depFilter(dep) {
+            return record.filter(item => item.dep === dep);
+        }
+
+        // 4.4 :- salary 20k to 35000 and city is surat filter record
+        function salaryAndCityFilter(min, max, city) {
+            return record.filter(item => item.salary >= min && item.salary <= max && item.city === city);
+        }
+
+        // 4.5 :- degi senior wise sum salary
+        function seniorSalarySum() {
+            let seniorRecords = record.filter(item => item.degi === 'senior');
+            let totalSalary = 0;
+            seniorRecords.forEach(item => totalSalary += item.salary);
+            return totalSalary;
+        }
+
+        // Display records in table
+        function displayRecords(records) {
+            let tableBody;
+           var tbl = " "
+            records.forEach(record => {
+                tbl += 
+                `<tr>
+                           <td>${record.id}</td>
+                           <td>${record.name}</td>
+                           <td>${record.email}</td>
+                           <td>${record.phone}</td>
+                           <td>${record.city}</td>
+                           <td>${record.salary}</td>
+                           <td>${record.degi}</td>
+                           <td>${record.dep}</td>
+                       </tr>`;
+            }
+           
+            );
+         
+        }
+
+        // Example usage
+        let cityRecords = cityFilter('surat');
+        displayRecords(cityRecords);
+
+        let salaryRecords = salaryFilter(20000, 35000);
+        displayRecords(salaryRecords);
+
+        let depRecords = depFilter('ui/ux');
+        displayRecords(depRecords);
+
+        let salaryAndCityRecords = salaryAndCityFilter(20000, 35000, 'surat');
+        displayRecords(salaryAndCityRecords);
+
+        let seniorSalary = seniorSalarySum();
+        console.log('Senior salary sum: ', seniorSalary);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <center>
+        <h1>Register User</h1>
+        <table border="1">
+            Name : <input type="text" id="name">
+            Email : <input type="text" id="email">
+            Password : <input type="text" id="password"><br><br>
+            <button onclick="registeruser()">Submit</button>
+        </table>
+        <a href="signin.html">Sign in</a>
+    </center>
+</body>
+</html>
+
+<script type="text/javascript">
+    let data = [];
+    const registeruser = () => {
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+
+        let obj = {
+            id : Math.floor(math.random() * 10000),
+            name,email,password
+        }
+        data.push(obj);
+        localStorage.setItem('users',JSON.stringify(data));
+        alert("Register");
+
+        document.getElementById('name').value = "";
+        document.getElementById('email').value = "";
+        document.getElementById('password').value = "";
+
+
+
+    }
+</script>

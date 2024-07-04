@@ -1,0 +1,33 @@
+<!-- 
+  Write a JavaScript program to get the volume of a cylindrical with four decimal places using object classes.
+Volume of a cylinder : V = πr2h
+where r is the radius and h is the height of the cylinder.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+      class Cylinder {
+        constructor(radius, height) {
+          this.radius = radius;
+          this.height = height  }
+      
+        getVolume() {
+          let radius = this.radius;
+          let height = this.height;
+          let volume = 3.14 * radius * radius * height; //3.14 * 5 * 5 * 10 == 785
+          return volume;
+        }
+      }
+      
+      let cylinder = new Cylinder(5, 10);
+      console.log(cylinder.getVolume());  
+      
+  </script>
+</body>
+</html>

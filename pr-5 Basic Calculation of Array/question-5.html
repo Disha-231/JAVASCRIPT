@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> insert element in array position wise.</title>
+    
+</head>
+<body>
+    <script type="text/javascript">
+
+        var number = parseInt(prompt("Enter size of array is :-"));
+        var array = [];
+        var i;
+
+        for(i = 0 ; i < number ; i++)
+        {
+            array[i] = parseInt(prompt("Enter value of  array :-"));
+        }
+        
+        let value = 15;
+        let position = 3;
+
+        for(i = array.length - 1 ; i >= position ; i--)
+        {
+            arr[i+1] = arr[i];
+        }
+        array[position]  = value;
+
+        document.write(array);
+    </script>
+
+</body>
+</html>

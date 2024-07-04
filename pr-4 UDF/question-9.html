@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-9</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        //TAKE SOMTHING RETURN SOMETHING:--------------------------------------------------------------------
+        // function threeangle(angle1, angle2, angle3) {
+
+
+        //         if (angle1 + angle2 + angle3 === 180) {
+        //             document.write(`<h1>The given angles form a valid triangle.</h1>`)
+        //         } else {
+        //             document.write(`<h1>The given angles do not form a valid triangle.</h1>`)
+        //         }
+        //     }
+
+
+
+        // function triangle() {
+        //     var angle1 = parseInt(prompt("Enter the first angle:"));
+        //     var angle2 = parseInt(prompt("Enter the second angle:"));
+        //     var angle3 = parseInt(prompt("Enter the third angle:"));
+
+        //     var result = threeangle(angle1, angle2, angle3);
+
+        // }
+
+
+        // triangle();
+
+
+
+
+        //TAKE NOTHING RETURN NOTHING:--------------------------------------------------------------------
+
+        // function threeangle() {
+
+        //     var angle1 = parseInt(prompt("Enter the first angle:"));
+        //     var angle2 = parseInt(prompt("Enter the second angle:"));
+        //     var angle3 = parseInt(prompt("Enter the third angle:"));
+
+
+        //     if (triangle(angle1, angle2, angle3)) {
+        //        document.write(`<h1>The given angles form a valid triangle.</h1>`);
+        //     } else {
+        //        document.write(`<h1>The given angles do not form a valid triangle.</h1>`);
+        //     }
+        // }
+
+
+        // function triangle(angle1, angle2, angle3) {
+
+        //     return angle1 + angle2 + angle3 === 180;
+        // }
+
+
+        // threeangle();
+
+
+
+        //TAKE SOMETHING RETURN NOTHING:------------------------------------------------------------------
+
+
+
+        // function triangle(angle1, angle2, angle3) {
+
+        //     if (angle1 + angle2 + angle3 === 180) {
+        //         document.write(`<h1>The given angles form a valid triangle.</h1>`);
+
+        //     } else {
+        //         document.write(`<h1>The given angles do not form a valid triangle.</h1>`);
+        //     }
+        // }
+
+
+        // var angle1 = parseInt(prompt("Enter the first angle:"));
+        // var angle2 = parseInt(prompt("Enter the second angle:"));
+        // var angle3 = parseInt(prompt("Enter the third angle:"));
+
+        // triangle(angle1, angle2, angle3);
+
+
+
+
+        //TAKE NOTHING RETURN SOMETHING:------------------------------------------------------------------
+
+
+        function isTriangleValid() {
+            var angle1 = parseFloat(prompt("Enter the first angle of the triangle:"));
+            var angle2 = parseFloat(prompt("Enter the second angle of the triangle:"));
+            var angle3 = parseFloat(prompt("Enter the third angle of the triangle:"));
+
+
+            var isValid = checkTriangleValidity(angle1, angle2, angle3);
+
+
+            return isValid ? "The triangle is valid." : "The triangle is not valid.";
+        }
+
+        function checkTriangleValidity(angle1, angle2, angle3) {
+
+            return angle1 + angle2 + angle3 === 180;
+        }
+
+        var result = isTriangleValid();
+       document.write(`${result}`);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //TAKE NOTHING RETURN SOMETHING:------------------------------------------------------------------
+
+    </script>
+</body>
+
+</html>

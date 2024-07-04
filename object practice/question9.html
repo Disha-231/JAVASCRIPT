@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    class Circle {
+      constructor(radius) {
+        this.radius = radius;
+      }
+
+      getArea() {
+        return 3.14 * this.radius * this.radius;
+      }
+
+      getPerimeter() {
+        return 2 * 3.14 * this.radius;
+      }
+    }
+
+    const radius = prompt("Enter the radius of the circle:");
+
+    const circle = new Circle(radius);
+
+    console.log(`Area: ${circle.getArea()}`);
+
+    console.log(`Perimeter: ${circle.getPerimeter()}`);
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!-- 3.Write a JavaScript program to find which number is greter in 4 numbers using nested if else. (using simple function)
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-3</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function findGreatest() {
+            var num1 = ((parseInt(prompt("Enter a number: "))));
+            var num2 = ((parseInt(prompt("Enter a number: "))));
+            var num3 = ((parseInt(prompt("Enter a number: "))));
+            var num4 = ((parseInt(prompt("Enter a number: "))));
+
+
+            if (num1 >= num2) {
+                if (num1 >= num3) {
+                    if (num1 >= num4) {
+                        document.write(`num-1 is max...`)
+                    } else {
+                        document.write(`num-4 is max...`)
+
+                    }
+                } else if (num3 >= num4) {
+                    document.write(`num-3 is max...`)
+
+                } else {
+                    document.write(`num-4 is max...`)
+
+                }
+            } else {
+                if (num2 >= num3) {
+                    if (num2 >= num4) {
+                        document.write(`num-2 is max...`)
+
+                    } else {
+                        document.write(`num-4 is max...`)
+
+                    }
+                } else if (num3 >= num4) {
+                    document.write(`num-3 is max...`)
+
+                } else {
+                    document.write(`num-4 is max...`)
+
+                }
+            }
+        }
+
+
+
+
+
+        findGreatest();
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

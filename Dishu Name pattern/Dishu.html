@@ -1,0 +1,122 @@
+<!--   
+  * * *
+    *   *
+    *    *
+    *   *
+  * * *
+        * * *
+          *
+          *  
+          * 
+        * * * 
+                * * * 
+               *
+                * * *
+                     *
+                * * *
+                        *   *
+                        *   *
+                        * * *
+                        *   *
+                        *   *
+
+                            *     *
+                            *     *
+                            *     *
+                            *     *
+                             * * *
+    -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dishu</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        var d = 1;
+        while (d <= 5) {
+            if (d == 1 || d == 5) {
+                document.write(`* * *`)
+            } else if (d == 2 || d == 4) {
+                document.write(`&nbsp&nbsp&nbsp*&nbsp&nbsp&nbsp*`)
+            } else if (d == 3) {
+                document.write(`&nbsp&nbsp&nbsp*&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp*`)
+            }
+            else {
+                document.write(`&nbsp&nbsp&nbsp*`)
+            }
+            document.write(`<br>`)
+            d++;
+        }
+        document.write(`<br>`)
+        document.write(`<br>`)
+
+        var i = 1;
+        while (i <= 5) {
+            if (i == 1 || i == 5) {
+                document.write(`* * *`)
+            } else {
+                document.write(`&nbsp&nbsp&nbsp*`)
+            }
+            document.write(`<br>`)
+            i++;
+        }
+        document.write(`<br>`)
+        document.write(`<br>`)
+
+
+        var s = 1;
+        while (s <= 5) {
+            if (s == 1 || s == 3 || s == 5) {
+                document.write(`* * *`)
+            }
+            else if (s == 2) {
+                document.write(`* &nbsp&nbsp&nbsp&nbsp&nbsp`)
+            } else if (s == 4) {
+                document.write(`&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp*`)
+            }
+
+            else {
+                document.write(`&nbsp&nbsp&nbsp*`)
+            }
+            document.write(`<br>`);
+            s++;
+        }
+        document.write(`<br>`)
+        document.write(`<br>`)
+
+        var h = 1;
+        while (h <= 5) {
+            if (h == 3) {
+                document.write(`*&nbsp * &nbsp*`)
+            } else {
+                document.write(`*&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp*`)
+            }
+            document.write(`<br>`)
+            h++;
+        }
+
+        document.write(`<br>`)
+        document.write(`<br>`)
+
+        var u = 1;
+        while (u <= 5) {
+            if (u == 5) {
+                document.write(`&nbsp*&nbsp * &nbsp*`)
+            } else {
+                document.write(`*&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp*`)
+            }
+            document.write(`<br>`)
+            u++;
+        }
+
+
+    </script>
+</body>
+
+</html>

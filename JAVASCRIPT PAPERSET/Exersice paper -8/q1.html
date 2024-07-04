@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+}
+
+#employeeForm {
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#employeeList {
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+</style>
+<body>
+   <center> <div id="employeeForm">
+    <h2>Add Employee</h2>
+    <form id="employeeDetails">
+        <label for="firstName">First Name:</label><br>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+        <label for="lastName">Last Name:</label><br>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="phone">Phone:</label><br>
+        <input type="tel" id="phone" name="phone" required><br><br>
+        <button type="submit">Add Employee</button>
+    </form>
+</div>
+<hr><hr><br>
+    <div id="employeeList"></div></center>
+    <script src="script.js"></script>
+</body>
+</html>
+<script>
+    document.getElementById('employeeDetails').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var newEmployee = {
+        firstName: document.getElementById('firstName').value,
+        lastName: document.getElementById('lastName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value
+    };
+
+    if(validateEmployee(newEmployee)) {
+        addEmployeeToList(newEmployee);
+        document.getElementById('employeeDetails').reset();
+    }
+});
+
+function validateEmployee(employee) {
+    if(employee.firstName === '' || employee.lastName === '' || employee.email === '' || employee.phone === '') {
+        alert('All fields are required.');
+        return false;
+    }
+
+    if(isNaN(employee.phone)) {
+        alert('Phone number must be numeric.');
+        return false;
+    }
+
+    return true;
+}
+
+function addEmployeeToList(employee) {
+    var employeeList = document.getElementById('employeeList');
+    var employeeItem = document.createElement('div');
+
+    employeeItem.innerHTML = '<strong>' + employee.firstName + ' ' + employee.lastName + '</strong><br>Email: ' + employee.email + '<br>Phone: ' + employee.phone;
+    employeeList.appendChild(employeeItem);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

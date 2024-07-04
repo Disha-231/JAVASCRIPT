@@ -1,0 +1,123 @@
+<!-- 6.Write a javascript Program to perform a swapping of two variables.(all function use) -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-6</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // TAKE NOTHING RETUEN NOTHING :--------------------------------------------------------------
+
+
+
+
+        // var Number1 = parseInt(prompt("Enter the first number:"));
+        // var Number2 = parseInt(prompt("Enter the second number:"));
+
+
+        // function TNRN() {
+
+        //     var Swap = Number1;
+        //     Number1 = Number2;
+        //     Number2 = Swap;
+        // }
+
+
+        // document.write("Original values:-  Number1 = ", Number1, ",<br> Number2 = ", Number2);
+        // document.write(`<br>`)
+        // document.write(`<br>`)
+
+
+        // TNRN();
+
+
+        // document.write("Swapped values:-   Number1 = ", Number1, ",<br> Number2 = ", Number2);
+
+
+
+
+
+        //TAKE NOTHING RETURN SOMETHING :-------------------------------------------------------------------
+
+        // function TNRS() {
+
+        //     var Number1 = parseInt(prompt("Enter the first number:"));
+        //     var Number2 = parseInt(prompt("Enter the second number:"));
+
+
+        //     var Swap = Number1;
+        //     Number1 = Number2;
+        //     Number2 = Swap;
+
+
+        //     return [Number1, Number2];
+        // }
+
+
+        // var swappedValues = TNRS();
+
+
+        // document.write("Original values:-  Number1 =", swappedValues[0], ", Number2 =", swappedValues[1]);
+        // document.write(`<br>`)
+        // document.write(`<br>`)
+        // document.write("Swapped values:-  Number1 =", swappedValues[1], ", Number2 =", swappedValues[0]);
+
+
+        //TAKE SOMTHING RETURN NOTHING :--------------------------------------------------------------
+
+
+
+        // function TSRN(Num01, Num02) {
+
+        //     var swap = Num01;
+        //     Num01 = Num02;
+        //     Num02 = swap;
+
+        //     document.write("Swapped values: Number1 =", Num01, ", Number2 =", Num02);
+        // }
+
+
+        // var Number1 = parseInt(prompt("Enter the first number:"));
+        // var Number2 = parseInt(prompt("Enter the second number:"));
+
+
+        // document.write("Original values: Number1 =", Number1, ", Number2 =", Number2);
+
+        // document.write(`<br>`)
+        // TSRN(Number1, Number2);
+
+
+
+        //TAKE SOMTHING RETURN  SOMETHING :--------------------------------------- -------------------------
+
+
+
+        function TSNS(Num01, Num02) {
+
+            var Swap = Num01;
+            Num01 = Num02;
+            Num02 = Swap;
+
+            return [Num01, Num02];
+        }
+
+        var Number1 = parseInt(prompt("Enter the first number:"));
+        var Number2 = parseInt(prompt("Enter the second number:"));
+
+        document.write("Original values: Number1 =", Number1, ", Number2 =", Number2);
+        document.write(`<br>`)
+        document.write(`<br>`)
+
+        var swappedValues = TSNS(Number1, Number2);
+
+        document.write("Swapped values: Number1 =", swappedValues[0], ", Number2 =", swappedValues[1]);
+
+
+    </script>
+</body>
+
+</html>

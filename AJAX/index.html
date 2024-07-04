@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+</head>
+<body>
+    <center>
+        <table border="1" cellpadding="18">
+            <thead>
+             <tr>
+                 <td>ID</td>
+                 <td>Title</td>
+                 <td>Body</td>
+             </tr>
+            </thead>
+        
+         <tbody id="record"></tbody>
+        </table>
+    </center>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $.ajax({
+        type:"GET",
+        url:"https://jsonplaceholder.typicode.com/posts",
+        success:function(res){
+            let tbl = "";
+            res.map((val)=>{
+                return (
+                    tbl += `
+                    <tr>
+                        <td>${val.id}</td>
+                        <td>${val.title}</td>
+                        <td>${val.body}</td>
+                    </tr>
+                    `
+                )
+                
+
+            })
+            document.getElementById('record').innerHTML = tbl;
+          
+        }
+    }) 
+
+    </script>   
+
+</body>
+</html>
+   

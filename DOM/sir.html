@@ -1,0 +1,72 @@
+
+<table align="center" border="1">
+    <tr>
+       <td>Name : </td>
+       <td><input type="text" id="name"></td>
+    </tr>
+    <tr>
+       <td>Phone : </td>
+       <td><input type="number" id="phone"></td>
+    </tr>
+    <tr>
+       <td></td>
+       <td><input type="button" onclick="saveRecord()" value="submit"></td>
+    </tr>
+  </table>
+  <h2 align="center">All User</h2>
+  <table align="center" border="1">
+   <thead>
+     <tr>
+       <td>Srno</td>
+       <td>Name</td>
+       <td>Phone</td>
+       <td>Action</td>
+     </tr>
+   </thead>
+   <tbody id="record"></tbody>
+  </table>
+  <script type="text/javascript">
+    let record = [];
+    const viewRecord = () => {
+      var tbl = "";
+      record.map((val)=>{
+        return (
+           tbl += `
+                    <tr>
+                       <td>${val.id}</td>
+                       <td>${val.name}</td>
+                       <td>${val.phone}</td>
+                       <td>
+                            <button onclick="deleteRecord(${val.id})">Delete</button>
+                       </td>
+                     </tr>
+                  `
+        )
+      })
+      document.getElementById('record').innerHTML = tbl;
+    }
+    viewRecord();
+    const saveRecord = () => {
+       let username = document.getElementById('name').value;
+       let userphone = document.getElementById('phone').value;
+      let id = Math.floor(Math.random() * 100000);
+       let obj = {
+          id : id,
+          name  : username,
+          phone : userphone
+       }
+       record.push(obj);
+       alert("Record successfully add");
+       viewRecord();
+       document.getElementById('name').value = "";
+       document.getElementById('phone').value = "";
+    }
+    const deleteRecord = (id) => {
+        var deleteR = record.filter((val)=>{
+            return val.id != id;
+        })
+        record = deleteR;
+        alert("record delete");
+        viewRecord();
+    }
+  </script>

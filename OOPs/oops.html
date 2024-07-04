@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oops..</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        class student {
+            constructor(gr, na, ag, sa) {
+                this.grid = gr;
+                this.name = na;
+                this.age = ag;
+                this.salary = sa;
+            }
+            getDetails() {
+                console.log(`:- ${this.grid}`);
+                console.log(`:- ${this.name}`);
+                console.log(`:- ${this.age}`);
+                console.log(`:- ${this.salary}`);
+            }
+        }
+        let no = parseInt(prompt("Enter number of Details for student:-- "));
+        for (var i = 1; i <= no; i++) {
+            var gr = parseInt(prompt("Enter your GRID:== "));
+            var name = prompt("Enter your NAME:== ");
+            var age = parseInt(prompt("Enter your AGE:== "));
+            var salary = parseInt(prompt("Enter your SALARY:== "));
+            st = new student(gr, name, age, salary);
+            st.getDetails();
+
+        }
+
+
+    </script>
+</body>
+
+</html>

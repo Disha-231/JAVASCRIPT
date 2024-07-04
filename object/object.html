@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    <table align="center" border="1">
+        <thead>
+            <th>Srno</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>City</th>
+            <th>Course</th>
+        </thead>
+        <tbody id="record">
+    
+    
+        </tbody>
+    </table>
+    <script type="text/javascript">
+       
+       let record = [
+                {name : "Disha",email : "Disha@gmail.com",phone : "12345",city :"suart",course : "full stack"},
+                {name : "krimii",email : "krimii@gmail.com",phone : "6666",city :"baroda",course : "reactjs"},
+                {name : "Khushi",email : "Khushi@gmail.com",phone : "65656",city :"vapi",course : "nodejs"},
+               
+       ]
+    
+    
+        var tbl = "";
+       for(var i=0;i<record.length;i++){
+           tbl += `
+                    <tr>
+                        <td>${i}</td>
+                        <td>${record[i].name}</td>
+                        <td>${record[i].email}</td>
+                        <td>${record[i].phone}</td>
+                        <td>${record[i].city}</td>
+                        <td>${record[i].course}</td>
+                    </tr>
+           `
+       }
+       document.getElementById('record').innerHTML = tbl;
+    
+    
+    
+    
+    var tbl = "";
+    var ans = record.map((val,i)=>{
+        tbl += `
+                    <tr>
+                        <td>${i}</td>
+                        <td>${val.name}</td>
+                        <td>${val.email}</td>
+                        <td>${val.phone}</td>
+                        <td>${val.city}</td>
+                        <td>${val.course}</td>
+                    </tr>
+           `
+    })
+    document.getElementById('record').innerHTML = tbl;
+    
+    
+    
+    
+    
+    
+    var tbl = "";
+    for(var i in record){
+        tbl += `
+                    <tr>
+                        <td>${i}</td>
+                        <td>${record[i].name}</td>
+                        <td>${record[i].email}</td>
+                        <td>${record[i].phone}</td>
+                        <td>${record[i].city}</td>
+                        <td>${record[i].course}</td>
+                    </tr>
+           `
+    }
+    document.getElementById('record').innerHTML = tbl;
+    
+    
+         
+    </script>
+    
+</body>
+</html>

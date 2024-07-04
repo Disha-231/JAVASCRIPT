@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pattern-02</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var i;
+        var j;
+        for(i=1; i<=5; i++){
+            for(j=1; j<=9; j++){
+                if((i+j==6 && j<=5)|| i==5 || (j-i==4 && j<=9 )){
+                    document.write('* ');
+                }else{
+                    document.write(`&nbsp&nbsp&nbsp;`)
+                }
+            }
+            document.write(`<br>`)
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

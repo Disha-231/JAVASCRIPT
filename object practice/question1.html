@@ -1,0 +1,36 @@
+<!--  Write a JavaScript program to list the properties of a JavaScript object.
+Sample object:
+var student = {
+name : "David Rayy",
+sclass : "VI",
+rollno : 12 };
+Sample Output: name,sclass,rollno -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objects...!</title>
+</head>
+<body>
+    <script type="text/javascript">
+        class student{
+            constructor(name, course, grid){
+                this.dname = name;
+                this.dcourse = course;
+                this.dgrid = grid;
+
+            }
+            getdetails(){
+                console.log(`${this.dname}`);
+                console.log(`${this.dcourse}`);
+                console.log(`${this.dgrid}`);
+            }
+        }
+        let d= new student("Disha", "fullstack", 5664)
+        console.log(d.getdetails());
+       
+    </script>
+</body>
+</html>

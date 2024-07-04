@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>Form validation</title>
+<body>
+<table>
+	<tr>
+		<td>Name</td>
+		<td><input type="text" id="name"></td>
+	</tr>
+
+	<tr>
+		<td>phone</td>
+		<td><input type="number" id="phone"></td>
+	</tr>
+	
+	<tr>
+		<td></td>
+		<td><input type="button" onclick="save()" value="submit"></td>
+	</tr>
+</table>
+	<hr>
+	<br>
+	<h2>All Users</h2>
+	<br>
+<table>
+	<thead>
+		<tr>
+			<td>srno</td>
+			<td>name</td>
+			<td>phone</td>
+			<td>Action</td>
+		</tr>
+	</thead>
+	<tbody id="record">
+	</tbody>
+</table>
+
+	<script type = "text/javascript">
+	let record [];
+	const viewrecord = () => {
+	var tbl += `
+		<tr>
+			<td>${val.id}</td>
+			<td>${val.name}</td>
+			<td>${val.phone}</td>
+			<td>
+				<button onclick = "deleterecord(${val.id})">DELETE</button>
+			</td>
+		</tr>
+			`
+		)
+		
+				 });
+ document.getElementById('record').innerHTML = tbl;
+}
+viewrecord();	
+
+
+	let username = document.getelementbyid('name').value;	
+	let userphone = document.getelementbyid('phone').value;
+
+</body>
+</html>
