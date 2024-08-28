@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        ol {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
+        .recipe-item {
+            background-color: #fff;
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .recipe-item h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.5em;
+        }
+        .recipe-item img {
+            width: 100px;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .recipe-item .details {
+            margin: 10px 0;
+        }
+        .recipe-item .details span {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recipe List</h1>
+    <ol id="recipe-list"></ol>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $.ajax({
+        type: "GET",
+        url: "https://dummyjson.com/recipes",
+        success: function(res) {
+            let listItems = "";
+            if (res && res.recipes) {
+                res.recipes.forEach((val) => {
+                    listItems += `
+                    <li class="recipe-item">
+                        <h2>${val.name}</h2>
+                        <img src="${val.image}" alt="Recipe Image">
+                        <div class="details">
+                            <span><strong>ID:</strong> ${val.id}</span>
+                            <span><strong>Ingredients:</strong> ${val.ingredients.join(", ")}</span>
+                            <span><strong>Instructions:</strong> ${val.instructions}</span>
+                            <span><strong>Prep Time:</strong> ${val.prepTimeMinutes} minutes</span>
+                            <span><strong>Cook Time:</strong> ${val.cookTimeMinutes} minutes</span>
+                            <span><strong>Servings:</strong> ${val.servings}</span>
+                            <span><strong>Difficulty:</strong> ${val.difficulty}</span>
+                            <span><strong>Cuisine:</strong> ${val.cuisine}</span>
+                            <span><strong>Calories per Serving:</strong> ${val.caloriesPerServing}</span>
+                            <span><strong>Tags:</strong> ${val.tags.join(", ")}</span>
+                            <span><strong>User ID:</strong> ${val.userId}</span>
+                            <span><strong>Rating:</strong> ${val.rating}</span>
+                            <span><strong>Review Count:</strong> ${val.reviewCount}</span>
+                            <span><strong>Meal Type:</strong> ${val.mealType}</span>
+                        </div>
+                    </li>
+                    `;
+                });
+                document.getElementById('recipe-list').innerHTML = listItems;
+            } else {
+                document.getElementById('recipe-list').innerHTML = "<li>No recipes found</li>";
+            }
+        },
+        error: function() {
+            document.getElementById('recipe-list').innerHTML = "<li>Error loading data</li>";
+        }
+    });
+    </script>
+</body>
+</html>
